@@ -39,7 +39,7 @@ public class TutorialController {
     	log.info("request tutorial", tutorial);
 		try {
 			Tutorial createdTutorial = tutorialRepository
-					.save(new Tutorial(tutorial.getTitle(), tutorial.getDescription(), false));
+					.save(new Tutorial(tutorial.getTitle(), tutorial.getDescription(), tutorial.getPublished()));
 			log.info("tutorial creado");
 			return new ResponseEntity<>(createdTutorial, HttpStatus.CREATED);
 		} catch (Exception e) {
